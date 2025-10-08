@@ -1,50 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Арктика — Белый медведь</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Белый медведь — AR</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #e0e0e0;
-    }
-    model-viewer {
-      width: 100vw;
-      height: 100vh;
-      --poster-color: #ffffff;
-    }
-    .ar-button {
+</head>
+<body style="margin:0; background:#f0f0f0;">
+  
+  <model-viewer
+    src="3polar_bear.glb"
+    alt="Белый медведь в Арктике"
+    ar
+    ar-modes="scene-viewer quick-look webxr"
+    camera-controls
+    shadow-intensity="0.8"
+    style="width:100vw; height:100vh; --poster-color:#ffffff;"
+  ></model-viewer>
+
+  <button
+    onclick="this.parentElement.querySelector('model-viewer').activateAR()"
+    style="
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      padding: 12px 24px;
+      bottom: 24px;
+      right: 24px;
+      padding: 14px 28px;
       background: #007AFF;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 12px;
+      font-size: 18px;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      z-index: 1000;
       cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <model-viewer
-    src="4polar_bear.glb"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    camera-controls
-    shadow-intensity="1"
-    alt="Белый медведь">
-  </model-viewer>
-
-  <button class="ar-button" onclick="document.querySelector('model-viewer').activateAR()">
+    "
+  >
     🕶️ Включить AR
   </button>
+
 </body>
-  
+</html>
 </html>
