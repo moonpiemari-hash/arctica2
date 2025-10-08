@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Арктика — Белый медведь</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+      --poster-color: #ffffff;
+    }
+    .ar-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 12px 24px;
+      background: #007AFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer
+    src="polar_bear(3).glb"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    shadow-intensity="1"
+    alt="Белый медведь">
+  </model-viewer>
+
+  <button class="ar-button" onclick="document.querySelector('model-viewer').activateAR()">
+    🕶️ Включить AR
+  </button>
+</body>
+</html>
